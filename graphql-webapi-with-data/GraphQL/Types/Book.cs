@@ -14,6 +14,10 @@ namespace graphql_webapi_with_data.GraphQL.Types
 
         public string Title { get; set; }
 
+        public string ISBN { get; set; }
+
+        public bool IsPaperback { get; set; }
+
         public Author Author { get; set; }
     }
 }
