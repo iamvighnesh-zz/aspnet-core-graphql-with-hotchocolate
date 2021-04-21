@@ -6,8 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using graphql_webapi_with_data.GraphQL.Types;
-using graphql_webapi_with_data.GraphQL.Queries;
-using graphql_webapi_with_data.GraphQL.Mutations;
+using graphql_webapi_with_data.GraphQL;
 
 namespace graphql_webapi_with_data
 {
@@ -33,8 +32,10 @@ namespace graphql_webapi_with_data
                 .AddType<AuthorType>()
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
+                .AddSubscriptionType<Subscription>()
                 .AddFiltering()
-                .AddSorting();
+                .AddSorting()
+                .AddInMemorySubscriptions();
 
             services.AddApplicationInsightsTelemetry();
         }
@@ -46,6 +47,8 @@ namespace graphql_webapi_with_data
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseWebSockets();
 
             app.UseRouting();
 

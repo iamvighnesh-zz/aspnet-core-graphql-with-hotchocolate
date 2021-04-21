@@ -4,7 +4,7 @@ using HotChocolate;
 using HotChocolate.Data;
 using System.Linq;
 
-namespace graphql_webapi_with_data.GraphQL.Queries
+namespace graphql_webapi_with_data.GraphQL
 {
     public class Query
     {
