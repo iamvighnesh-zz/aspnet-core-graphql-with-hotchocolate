@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace graphql_webapi_with_data.GraphQL.Types
 {
@@ -13,6 +14,6 @@ namespace graphql_webapi_with_data.GraphQL.Types
         [Required]
         public string Name { get; set; }
 
-        public virtual ICollection<Book> Books { get; set; } = new List<Book>();
+        public virtual IQueryable<Book> Books { get; set; }
     }
 }

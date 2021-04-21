@@ -6,18 +6,17 @@ using System.Linq;
 
 namespace graphql_webapi_with_data.GraphQL.Queries
 {
-    public class BooksQuery
+    public class Query
     {
         [UseDbContext(typeof(ApplicationDbContext))]
-        [UseProjection]
         [UseFiltering]
         [UseSorting]
         public IQueryable<Book> SearchBooks(string title, [ScopedService] ApplicationDbContext context) => context.Books.Where(b => b.Title.Contains(title));
 
         [UseDbContext(typeof(ApplicationDbContext))]
-        [UseProjection]
-        [UseFiltering]
-        [UseSorting]
         public Book GetBookById(int bookId, [ScopedService] ApplicationDbContext context) => context.Books.FirstOrDefault(b => b.Id == bookId);
+
+        [UseDbContext(typeof(ApplicationDbContext))]
+        public Author GetAuthorById(int authorId, [ScopedService] ApplicationDbContext context) => context.Authors.FirstOrDefault(b => b.Id == authorId);
     }
 }

@@ -29,13 +29,12 @@ namespace graphql_webapi_with_data
 
             services
                 .AddGraphQLServer()
-                .AddType<Book>()
-                .AddType<Author>()
-                .AddQueryType<BooksQuery>()
-                .AddMutationType<BooksMutation>()
+                .AddType<BookType>()
+                .AddType<AuthorType>()
+                .AddQueryType<Query>()
+                .AddMutationType<Mutation>()
                 .AddFiltering()
-                .AddSorting()
-                .AddProjections();
+                .AddSorting();
 
             services.AddApplicationInsightsTelemetry();
         }
