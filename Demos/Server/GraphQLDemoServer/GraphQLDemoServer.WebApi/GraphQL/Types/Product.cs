@@ -17,6 +17,6 @@ namespace GraphQLDemoServer.WebApi.GraphQL.Types
 
         public Brand Brand { get; set; }
 
-        public string imageAddress { get; set; }
+        public string ImageAddress { get; set; }
     }
 }

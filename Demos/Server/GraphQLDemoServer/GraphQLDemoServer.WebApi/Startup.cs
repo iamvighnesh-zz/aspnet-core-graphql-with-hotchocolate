@@ -1,7 +1,9 @@
+using GraphQLDemoServer.WebApi.GraphQL;
 using GraphQLDemoServer.WebApi.GraphQL.Data;
+using GraphQLDemoServer.WebApi.GraphQL.Types;
+using HotChocolate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,19 +26,21 @@ namespace GraphQLDemoServer.WebApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationInsightsTelemetry();
-
-            var connectionString = Configuration.GetConnectionString("ProductCatelogueConnection");
-
             services.AddPooledDbContextFactory<AppDbContext>((serviceProvider, options) =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("ProductCatelogueConnection"));
             });
 
             services
-                .AddGraphQLServer("ProductWebApi", MaxRequestSizeInBytes)
+                .AddGraphQLServer()
+                .AddQueryType<Queries>()
+                .AddMutationType<Mutations>()
+                .AddType<BrandType>()
+                .AddType<ProductType>()
                 .AddFiltering()
                 .AddSorting();
+
+            services.AddApplicationInsightsTelemetry();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,10 +55,7 @@ namespace GraphQLDemoServer.WebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapGraphQL();
             });
         }
     }
