@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GraphQLDemoServer.WebApi.GraphQL.Types
+namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types
 {
     public class Product
     {

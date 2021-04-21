@@ -1,10 +1,10 @@
-﻿using GraphQLDemoServer.WebApi.GraphQL.Data;
-using GraphQLDemoServer.WebApi.GraphQL.Types;
+﻿using GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types;
+using GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Data;
 using HotChocolate;
 using HotChocolate.Data;
 using System.Linq;
 
-namespace GraphQLDemoServer.WebApi.GraphQL
+namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL
 {
     public class Queries
     {

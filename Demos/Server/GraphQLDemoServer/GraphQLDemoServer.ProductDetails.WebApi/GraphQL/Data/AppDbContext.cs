@@ -1,7 +1,7 @@
-﻿using GraphQLDemoServer.WebApi.GraphQL.Types;
+﻿using GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types;
 using Microsoft.EntityFrameworkCore;
 
-namespace GraphQLDemoServer.WebApi.GraphQL.Data
+namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Data
 {
     public class AppDbContext : DbContext
     {

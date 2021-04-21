@@ -1,6 +1,6 @@
-using GraphQLDemoServer.WebApi.GraphQL;
-using GraphQLDemoServer.WebApi.GraphQL.Data;
-using GraphQLDemoServer.WebApi.GraphQL.Types;
+using GraphQLDemoServer.ProductDetails.WebApi.GraphQL;
+using GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Data;
+using GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types;
 using HotChocolate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,12 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace GraphQLDemoServer.WebApi
+namespace GraphQLDemoServer.ProductDetails.WebApi
 {
     public class Startup
     {
-        private const int MaxRequestSizeInBytes = 1024 * 1024 * 1; //1MB
-
         public IConfiguration Configuration { get; set; }
 
         public Startup(IConfiguration configuration)

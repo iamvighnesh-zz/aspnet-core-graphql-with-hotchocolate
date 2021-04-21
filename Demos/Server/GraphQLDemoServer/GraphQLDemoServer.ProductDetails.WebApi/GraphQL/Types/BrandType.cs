@@ -1,9 +1,9 @@
-﻿using GraphQLDemoServer.WebApi.GraphQL.Data;
+﻿using GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Data;
 using HotChocolate;
 using HotChocolate.Types;
 using System.Linq;
 
-namespace GraphQLDemoServer.WebApi.GraphQL.Types
+namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types
 {
     public class BrandType : ObjectType<Brand>
     {
