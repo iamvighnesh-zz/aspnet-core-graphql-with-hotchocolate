@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simple-webapi-with-graphql", "simple-webapi-with-graphql\simple-webapi-with-graphql.csproj", "{648692A6-9BFD-4674-96E8-78D1BD5DE0B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "graphql-webapi-with-data", "graphql-webapi-with-data\graphql-webapi-with-data.csproj", "{17259CEA-5DD9-4D63-A0EE-617530937123}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "graphql-webapi-with-data", "graphql-webapi-with-data\graphql-webapi-with-data.csproj", "{17259CEA-5DD9-4D63-A0EE-617530937123}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
