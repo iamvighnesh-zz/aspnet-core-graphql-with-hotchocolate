@@ -17,7 +17,7 @@ namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types
 
         private class BrandProductsResolver
         {
-            public IQueryable<Product> GetProducts(Brand brand, [ScopedService] AppDbContext context)
+            public IQueryable<ProductDetail> GetProducts(Brand brand, [ScopedService] AppDbContext context)
             {
                 return context.Products.Where(p => p.BrandId == brand.Id);
             }

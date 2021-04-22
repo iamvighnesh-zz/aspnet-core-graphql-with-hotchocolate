@@ -9,7 +9,7 @@ namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Data
         {
         }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductDetail> Products { get; set; }
 
         public DbSet<Brand> Brands { get; set; }
 
@@ -22,7 +22,7 @@ namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Data
                 .HasForeignKey(p => p.BrandId);
 
             builder
-                .Entity<Product>()
+                .Entity<ProductDetail>()
                 .HasOne(p => p.Brand)
                 .WithMany(p => p.Products)
                 .HasForeignKey(p => p.BrandId);

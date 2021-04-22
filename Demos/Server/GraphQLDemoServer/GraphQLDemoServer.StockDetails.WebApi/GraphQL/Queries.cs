@@ -19,9 +19,18 @@ namespace GraphQLDemoServer.StockDetails.WebApi.GraphQL
         }
 
         [UseDbContext(typeof(AppDbContext))]
-        public IQueryable<Product> SearchProductsById(int productId, [ScopedService] AppDbContext context)
+        public IQueryable<ProductStock> GetProductStockById(int productId, [ScopedService] AppDbContext context)
         {
-            return context.Products.Where(b => b.ExternalProductId == productId);
+            var productStockResults = context.Products.Where(b => b.ExternalProductId == productId);
+
+            var  result = productStockResults.Select(p => new ProductStock
+            {
+                ProductId = p.ExternalProductId,
+                InStock = p.InStock,
+                Size = p.Size.Name
+            });
+
+            return result;
         }
     }
 }

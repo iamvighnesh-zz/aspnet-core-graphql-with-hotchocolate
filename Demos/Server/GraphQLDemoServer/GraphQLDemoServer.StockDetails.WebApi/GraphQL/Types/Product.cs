@@ -20,4 +20,13 @@ namespace GraphQLDemoServer.StockDetails.WebApi.GraphQL.Types
 
         public SizeInfo Size { get; set; }
     }
+
+    public class ProductStock
+    {
+        public int ProductId { get; set; }
+
+        public int InStock { get; set; }
+
+        public string Size { get; set; }
+    }
 }

@@ -27,9 +27,9 @@ namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL
         }
 
         [UseDbContext(typeof(AppDbContext))]
-        public async Task<Product> AddProduct(string title, string imageAddress, int brandId, [ScopedService] AppDbContext context)
+        public async Task<ProductDetail> AddProduct(string title, string imageAddress, int brandId, [ScopedService] AppDbContext context)
         {
-            var product = new Product
+            var product = new ProductDetail
             {
                 Title = title,
                 ImageAddress = imageAddress,

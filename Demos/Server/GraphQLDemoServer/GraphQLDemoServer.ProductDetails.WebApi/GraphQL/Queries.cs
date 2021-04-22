@@ -19,10 +19,16 @@ namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL
         }
 
         [UseDbContext(typeof(AppDbContext))]
-        public IQueryable<Product> SearchProductsByTitle(string searchTerm, [ScopedService] AppDbContext context)
+        public IQueryable<ProductDetail> SearchProductDetailsByTitle(string searchTerm, [ScopedService] AppDbContext context)
         {
             return context.Products
                 .Where(b => b.Title.Contains(searchTerm));
+        }
+
+        [UseDbContext(typeof(AppDbContext))]
+        public ProductDetail GetProductDetailsById(int productId, [ScopedService] AppDbContext context)
+        {
+            return context.Products.Where(b => b.Id == productId).FirstOrDefault();
         }
     }
 }

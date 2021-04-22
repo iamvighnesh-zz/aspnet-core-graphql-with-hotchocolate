@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types
 {
-    public class Product
+    public class ProductDetail
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

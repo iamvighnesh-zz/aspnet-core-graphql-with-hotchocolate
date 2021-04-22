@@ -13,6 +13,6 @@ namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types
         [Required]
         public string Name { get; set; }
 
-        public IQueryable<Product> Products { get; set; }
+        public IQueryable<ProductDetail> Products { get; set; }
     }
 }

@@ -1,0 +1,3 @@
+extend type Query {
+    me: Product! @delegate(schema: "productdetails", path: "user(id: 1)")
+}

@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types
 {
-    public class ProductType : ObjectType<Product>
+    public class ProductType : ObjectType<ProductDetail>
     {
-        protected override void Configure(IObjectTypeDescriptor<Product> descriptor)
+        protected override void Configure(IObjectTypeDescriptor<ProductDetail> descriptor)
         {
             descriptor
                 .Field(f => f.Brand)
@@ -18,7 +18,7 @@ namespace GraphQLDemoServer.ProductDetails.WebApi.GraphQL.Types
 
         private class ProductBrandResolver
         {
-            public Brand GetBrand(Product product, [ScopedService] AppDbContext context)
+            public Brand GetBrand(ProductDetail product, [ScopedService] AppDbContext context)
             {
                 return context.Brands
                     .Where(p => p.Id == product.BrandId)

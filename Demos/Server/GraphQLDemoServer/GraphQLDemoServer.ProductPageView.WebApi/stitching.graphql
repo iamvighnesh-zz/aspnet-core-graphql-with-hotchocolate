@@ -1,0 +1,11 @@
+﻿extend type Query {
+    prd: ProductDetail! @delegate(schema: "productdetails", path: "productDetailsById(productId: 1)")
+}
+
+extend type ProductDetail {
+    stock: [ProductStock!]!
+        @delegate(
+            schema: "stockdetails",
+            path: "productStockById(productId: $fields:id)"
+        )
+}
